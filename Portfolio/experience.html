@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML Engineer Portfolio - Experience</title>
+    <meta name="description" content="Explore the professional work history and achievements of the AI/ML Engineer.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-background"></div>
+    
+    <!-- Scanlines Effect -->
+    <div class="scanlines"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">VOID_WALKER</span>
+                <span class="logo-bracket">]</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link" data-en="Home" data-jp="ホーム">Home</a>
+                <a href="projects.html" class="nav-link" data-en="Projects" data-jp="プロジェクト">Projects</a>
+                <a href="about.html" class="nav-link" data-en="About" data-jp="について">About</a>
+                <a href="experience.html" class="nav-link active" data-en="Experience" data-jp="経験">Experience</a>
+                <a href="contact.html" class="nav-link" data-en="Contact" data-jp="連絡先">Contact</a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="lang-toggle" id="lang-toggle">
+                    <span class="lang-current">EN</span>
+                    <span class="lang-separator">/</span>
+                    <span class="lang-alt">JP</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="experience-section">
+            <div class="container">
+                <h1 class="section-title glitch-effect" data-en="Work Experience" data-jp="職務経験">Work Experience</h1>
+                <p class="section-description" data-en="A detailed timeline of my professional journey and key contributions." data-jp="私の専門的な道のりと主要な貢献の詳細なタイムライン。">
+                    A detailed timeline of my professional journey and key contributions.
+                </p>
+
+                <div class="timeline">
+                    <!-- Experience Entry 1 -->
+                    <div class="timeline-item glass-effect">
+                        <div class="timeline-date" data-en="Jan 2022 - Present" data-jp="2022年1月 - 現在">Jan 2022 - Present</div>
+                        <h3 class="timeline-title" data-en="Senior AI Engineer" data-jp="シニアAIエンジニア">Senior AI Engineer</h3>
+                        <div class="timeline-company" data-en="Tech Solutions Inc., Tokyo" data-jp="テックソリューションズ株式会社、東京">Tech Solutions Inc., Tokyo</div>
+                        <ul class="timeline-description">
+                            <li data-en="Led development of a real-time fraud detection system using deep learning, reducing false positives by 30%." data-jp="深層学習を用いたリアルタイム不正検知システムの開発を主導し、誤検知を30%削減。">Led development of a real-time fraud detection system using deep learning, reducing false positives by 30%.</li>
+                            <li data-en="Designed and implemented scalable machine learning pipelines on AWS, handling terabytes of data daily." data-jp="AWS上でスケーラブルな機械学習パイプラインを設計・実装し、毎日テラバイト規模のデータを処理。">Designed and implemented scalable machine learning pipelines on AWS, handling terabytes of data daily.</li>
+                            <li data-en="Mentored junior engineers and contributed to internal AI research initiatives." data-jp="若手エンジニアの指導と社内AI研究イニシアチブに貢献。">Mentored junior engineers and contributed to internal AI research initiatives.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience Entry 2 -->
+                    <div class="timeline-item glass-effect">
+                        <div class="timeline-date" data-en="Mar 2019 - Dec 2021" data-jp="2019年3月 - 2021年12月">Mar 2019 - Dec 2021</div>
+                        <h3 class="timeline-title" data-en="Machine Learning Engineer" data-jp="機械学習エンジニア">Machine Learning Engineer</h3>
+                        <div class="timeline-company" data-en="Innovate AI Labs, Osaka" data-jp="イノベートAIラボ、大阪">Innovate AI Labs, Osaka</div>
+                        <ul class="timeline-description">
+                            <li data-en="Developed and optimized NLP models for customer sentiment analysis, improving accuracy by 15%." data-jp="顧客感情分析のためのNLPモデルを開発・最適化し、精度を15%向上。">Developed and optimized NLP models for customer sentiment analysis, improving accuracy by 15%.</li>
+                            <li data-en="Collaborated with cross-functional teams to integrate ML solutions into existing product lines." data-jp="既存の製品ラインにMLソリューションを統合するため、部門横断チームと協力。">Collaborated with cross-functional teams to integrate ML solutions into existing product lines.</li>
+                            <li data-en="Researched and prototyped computer vision algorithms for image recognition tasks." data-jp="画像認識タスクのためのコンピュータビジョンアルゴリズムを研究・プロトタイプ作成。">Researched and prototyped computer vision algorithms for image recognition tasks.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Add more experience entries as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Interactive Terminal -->
+    <div class="interactive-terminal" id="interactive-terminal">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close" id="terminal-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">interactive_shell.exe</div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-history" id="terminal-history">
+                <div class="terminal-line">
+                    <span class="prompt">visitor@portfolio:~$</span>
+                    <span data-en="Type 'help' for available commands" data-jp="利用可能なコマンドは'help'と入力">Type 'help' for available commands</span>
+                </div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false">
+                <span class="cursor">|</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Terminal Toggle Button -->
+    <button class="terminal-toggle" id="terminal-toggle" title="Open Terminal">
+        <span>>_</span>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="footer glass-effect">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text" data-en="© 2024 AI/ML Engineer Portfolio. Built with passion and code." data-jp="© 2024 AI/MLエンジニアポートフォリオ。情熱とコードで構築。">
+                    © 2024 AI/ML Engineer Portfolio. Built with passion and code.
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/nafis2675" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/terminal.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML Engineer Portfolio - Projects</title>
+    <meta name="description" content="Showcasing AI/ML projects with detailed descriptions and live demos">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-background"></div>
+    
+    <!-- Scanlines Effect -->
+    <div class="scanlines"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">VOID_WALKER</span>
+                <span class="logo-bracket">]</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link" data-en="Home" data-jp="ホーム">Home</a>
+                <a href="projects.html" class="nav-link active" data-en="Projects" data-jp="プロジェクト">Projects</a>
+                <a href="about.html" class="nav-link" data-en="About" data-jp="について">About</a>
+                <a href="experience.html" class="nav-link" data-en="Experience" data-jp="経験">Experience</a>
+                <a href="contact.html" class="nav-link" data-en="Contact" data-jp="連絡先">Contact</a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="lang-toggle" id="lang-toggle">
+                    <span class="lang-current">EN</span>
+                    <span class="lang-separator">/</span>
+                    <span class="lang-alt">JP</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="projects-section">
+            <div class="container">
+                <h1 class="section-title glitch-effect" data-en="My Projects" data-jp="私のプロジェクト">My Projects</h1>
+                <p class="section-description" data-en="A collection of my AI and Machine Learning projects, showcasing diverse applications and technical expertise." data-jp="私のAIおよび機械学習プロジェクトのコレクション。多様なアプリケーションと技術的専門知識を紹介します。">
+                    A collection of my AI and Machine Learning projects, showcasing diverse applications and technical expertise.
+                </p>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card glass-effect" data-project-id="1">
+                        <h3 class="project-title" data-en="Neural Style Transfer" data-jp="ニューラルスタイル転送">Neural Style Transfer</h3>
+                        <p class="project-description" data-en="Implemented a deep learning model to transfer artistic styles from one image to another." data-jp="ある画像から別の画像へ芸術的なスタイルを転送する深層学習モデルを実装しました。">Implemented a deep learning model to transfer artistic styles from one image to another.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">CNN</span>
+                        </div>
+                        <a href="project-detail.html?id=1" class="cta-button primary small">
+                            <span class="btn-text" data-en="View Details" data-jp="詳細を見る">View Details</span>
+                            <span class="btn-glow"></span>
+                        </a>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card glass-effect" data-project-id="2">
+                        <h3 class="project-title" data-en="Sentiment Analysis API" data-jp="感情分析API">Sentiment Analysis API</h3>
+                        <p class="project-description" data-en="Developed a RESTful API for real-time sentiment analysis of text data using NLP techniques." data-jp="NLP技術を使用してテキストデータのリアルタイム感情分析のためのRESTful APIを開発しました。">Developed a RESTful API for real-time sentiment analysis of text data using NLP techniques.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <a href="project-detail.html?id=2" class="cta-button primary small">
+                            <span class="btn-text" data-en="View Details" data-jp="詳細を見る">View Details</span>
+                            <span class="btn-glow"></span>
+                        </a>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card glass-effect" data-project-id="3">
+                        <h3 class="project-title" data-en="Reinforcement Learning for Games" data-jp="ゲームのための強化学習">Reinforcement Learning for Games</h3>
+                        <p class="project-description" data-en="Trained an AI agent to play classic arcade games using Q-learning and Deep Q-Networks." data-jp="Q学習と深層Qネットワークを使用して、AIエージェントに古典的なアーケードゲームをプレイするように訓練しました。">Trained an AI agent to play classic arcade games using Q-learning and Deep Q-Networks.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Reinforcement Learning</span>
+                        </div>
+                        <a href="project-detail.html?id=3" class="cta-button primary small">
+                            <span class="btn-text" data-en="View Details" data-jp="詳細を見る">View Details</span>
+                            <span class="btn-glow"></span>
+                        </a>
+                    </div>
+                    
+                    <!-- Add more project cards as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Interactive Terminal -->
+    <div class="interactive-terminal" id="interactive-terminal">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close" id="terminal-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">interactive_shell.exe</div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-history" id="terminal-history">
+                <div class="terminal-line">
+                    <span class="prompt">visitor@portfolio:~$</span>
+                    <span data-en="Type 'help' for available commands" data-jp="利用可能なコマンドは'help'と入力">Type 'help' for available commands</span>
+                </div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false">
+                <span class="cursor">|</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Terminal Toggle Button -->
+    <button class="terminal-toggle" id="terminal-toggle" title="Open Terminal">
+        <span>>_</span>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="footer glass-effect">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text" data-en="© 2024 AI/ML Engineer Portfolio. Built with passion and code." data-jp="© 2024 AI/MLエンジニアポートフォリオ。情熱とコードで構築。">
+                    © 2024 AI/ML Engineer Portfolio. Built with passion and code.
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/nafis2675" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/terminal.js"></script>
+</body>
+</html>

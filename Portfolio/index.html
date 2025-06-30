@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML Engineer Portfolio</title>
+    <meta name="description" content="Interactive portfolio of an AI/ML Engineer showcasing projects, skills, and experience">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-background"></div>
+    
+    <!-- Scanlines Effect -->
+    <div class="scanlines"></div>
+    
+    <!-- 8-bit Solar System Animation -->
+    <div class="solar-system">
+        <div class="star">Nafis Iqbal</div>
+        <div class="planet ai">AI</div>
+        <div class="planet ml">ML</div>
+        <div class="planet data-analysis">Data Analysis</div>
+        <div class="planet web-dev">Web Dev</div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">VOID_WALKER</span>
+                <span class="logo-bracket">]</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active" data-en="Home" data-jp="ホーム">Home</a>
+                <a href="projects.html" class="nav-link" data-en="Projects" data-jp="プロジェクト">Projects</a>
+                <a href="about.html" class="nav-link" data-en="About" data-jp="について">About</a>
+                <a href="experience.html" class="nav-link" data-en="Experience" data-jp="経験">Experience</a>
+                <a href="contact.html" class="nav-link" data-en="Contact" data-jp="連絡先">Contact</a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="lang-toggle" id="lang-toggle">
+                    <span class="lang-current">EN</span>
+                    <span class="lang-separator">/</span>
+                    <span class="lang-alt">JP</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">portfolio.exe</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command typing-animation" id="init-command">./initialize_profile.sh</span>
+                            </div>
+                            <div class="terminal-output" id="terminal-output">
+                                <div class="output-line" data-en="[INITIALIZING]..." data-jp="[初期化中]...">[INITIALIZING]...</div>
+                                <div class="output-line" data-en="[LOADING PROFILE]..." data-jp="[プロファイル読み込み中]...">[LOADING PROFILE]...</div>
+                                <div class="output-line" data-en="[SYSTEM READY]" data-jp="[システム準備完了]">[SYSTEM READY]</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-text">
+                        <h1 class="hero-name glitch-effect">
+                            <span data-en="Nafis Iqbal" data-jp="ナフィス.イクバル">Nafis Iqbal</span>
+                        </h1>
+                        <h2 class="hero-title">
+                            <span class="title-bracket">&lt;</span>
+                            <span class="title-text" data-en="AI & Machine Learning Engineer" data-jp="AI・機械学習エンジニア">AI & Machine Learning Engineer</span>
+                            <span class="title-bracket">/&gt;</span>
+                        </h2>
+                        <p class="hero-description" data-en="Passionate about solving complex problems using artificial intelligence and machine learning. Transforming data into intelligent solutions that make a real-world impact." data-jp="人工知能と機械学習を使用して複雑な問題を解決することに情熱を注いでいます。データを現実世界に影響を与えるインテリジェントなソリューションに変換します。">
+                            Passionate about solving complex problems using artificial intelligence and machine learning. Transforming data into intelligent solutions that make a real-world impact.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="projects.html" class="cta-button primary">
+                                <span class="btn-text" data-en="> Explore My Work" data-jp="> 作品を見る">> Explore My Work</span>
+                                <span class="btn-glow"></span>
+                            </a>
+                            <a href="contact.html" class="cta-button secondary">
+                                <span class="btn-text" data-en="Get In Touch" data-jp="連絡する">Get In Touch</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card glass-effect">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label" data-en="Projects Completed" data-jp="完了プロジェクト">Projects Completed</div>
+                    </div>
+                    <div class="stat-card glass-effect">
+                        <div class="stat-number" data-count="2">0</div>
+                        <div class="stat-label" data-en="Years Experience" data-jp="年の経験">Years Experience</div>
+                    </div>
+                    <div class="stat-card glass-effect">
+                        <div class="stat-number" data-count="7">0</div>
+                        <div class="stat-label" data-en="Technologies Mastered" data-jp="習得技術">Technologies Mastered</div>
+                    </div>
+                    <div class="stat-card glass-effect">
+                        <div class="stat-number" data-count="20">0</div>
+                        <div class="stat-label" data-en="Problems Solved" data-jp="解決した問題">Problems Solved</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Interactive Terminal -->
+    <div class="interactive-terminal" id="interactive-terminal">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close" id="terminal-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">interactive_shell.exe</div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-history" id="terminal-history">
+                <div class="terminal-line">
+                    <span class="prompt">visitor@portfolio:~$</span>
+                    <span data-en="Type 'help' for available commands" data-jp="利用可能なコマンドは'help'と入力">Type 'help' for available commands</span>
+                </div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false">
+                <span class="cursor">|</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Terminal Toggle Button -->
+    <button class="terminal-toggle" id="terminal-toggle" title="Open Terminal">
+        <span>&gt;_</span>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="footer glass-effect">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text" data-en="© 2024 AI/ML Engineer Portfolio. Built with passion and code." data-jp="© 2024 AI/MLエンジニアポートフォリオ。情熱とコードで構築。">
+                    © 2024 AI/ML Engineer Portfolio. Built with passion and code.
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/nafis2675" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/terminal.js"></script>
+</body>
+</html>

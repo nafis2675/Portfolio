@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML Engineer Portfolio - Contact</title>
+    <meta name="description" content="Get in touch with the AI/ML Engineer.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-background"></div>
+    
+    <!-- Scanlines Effect -->
+    <div class="scanlines"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">VOID_WALKER</span>
+                <span class="logo-bracket">]</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link" data-en="Home" data-jp="ホーム">Home</a>
+                <a href="projects.html" class="nav-link" data-en="Projects" data-jp="プロジェクト">Projects</a>
+                <a href="about.html" class="nav-link" data-en="About" data-jp="について">About</a>
+                <a href="experience.html" class="nav-link" data-en="Experience" data-jp="経験">Experience</a>
+                <a href="contact.html" class="nav-link active" data-en="Contact" data-jp="連絡先">Contact</a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="lang-toggle" id="lang-toggle">
+                    <span class="lang-current">EN</span>
+                    <span class="lang-separator">/</span>
+                    <span class="lang-alt">JP</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="contact-section">
+            <div class="container">
+                <h1 class="section-title glitch-effect" data-en="Get In Touch" data-jp="お問い合わせ">Get In Touch</h1>
+                <p class="section-description" data-en="I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!" data-jp="新しいプロジェクト、創造的なアイデア、またはあなたのビジョンの一部となる機会についていつでも話し合う準備ができています。お気軽にご連絡ください！">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
+                </p>
+
+                <div class="contact-grid">
+                    <div class="contact-card glass-effect">
+                        <h2 class="card-title" data-en="Professional Profiles" data-jp="プロフェッショナルプロフィール">Professional Profiles</h2>
+                        <div class="contact-links">
+                            <a href="https://linkedin.com" target="_blank" class="cta-button primary">
+                                <span class="btn-text">LinkedIn</span>
+                                <span class="btn-glow"></span>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="cta-button secondary">
+                                <span class="btn-text">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card glass-effect">
+                        <h2 class="card-title" data-en="Email Me" data-jp="メールを送る">Email Me</h2>
+                        <p class="email-address" id="email-address" data-email="nafisiqbalvw@gmail.com">nafisiqbalvw@gmail.com</p>
+                        <button class="cta-button primary small" id="copy-email">
+                            <span class="btn-text" data-en="Copy Email" data-jp="メールをコピー">Copy Email</span>
+                            <span class="btn-glow"></span>
+                        </button>
+                        <span class="copy-feedback" id="copy-feedback" data-en="Copied!" data-jp="コピーしました！"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Interactive Terminal -->
+    <div class="interactive-terminal" id="interactive-terminal">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-close" id="terminal-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+            </div>
+            <div class="terminal-title">interactive_shell.exe</div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-history" id="terminal-history">
+                <div class="terminal-line">
+                    <span class="prompt">visitor@portfolio:~$</span>
+                    <span data-en="Type 'help' for available commands" data-jp="利用可能なコマンドは'help'と入力">Type 'help' for available commands</span>
+                </div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false">
+                <span class="cursor">|</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Terminal Toggle Button -->
+    <button class="terminal-toggle" id="terminal-toggle" title="Open Terminal">
+        <span>>_</span>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="footer glass-effect">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text" data-en="© 2024 AI/ML Engineer Portfolio. Built with passion and code." data-jp="© 2024 AI/MLエンジニアポートフォリオ。情熱とコードで構築。">
+                    © 2024 AI/ML Engineer Portfolio. Built with passion and code.
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/nafis2675" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/terminal.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyEmailButton = document.getElementById('copy-email');
+            const emailAddressSpan = document.getElementById('email-address');
+            const copyFeedbackSpan = document.getElementById('copy-feedback');
+
+            if (copyEmailButton && emailAddressSpan && copyFeedbackSpan) {
+                copyEmailButton.addEventListener('click', () => {
+                    const email = emailAddressSpan.getAttribute('data-email');
+                    navigator.clipboard.writeText(email).then(() => {
+                        copyFeedbackSpan.style.opacity = '1';
+                        setTimeout(() => {
+                            copyFeedbackSpan.style.opacity = '0';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy email: ', err);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

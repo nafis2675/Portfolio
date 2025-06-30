@@ -1,0 +1,606 @@
+/* ===== KEYFRAME ANIMATIONS ===== */
+
+/* Typing Animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(2deg);
+  }
+  40% {
+    transform: skew(-2deg);
+  }
+  60% {
+    transform: skew(1deg);
+  }
+  80% {
+    transform: skew(-1deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+/* Fade In Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 255, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Scanlines Animation */
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+/* Matrix Rain Effect */
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Particle Movement */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(15px);
+  }
+}
+
+/* ===== ANIMATION CLASSES ===== */
+
+/* Typing Animation */
+.typing-animation {
+  overflow: hidden;
+  border-right: 2px solid var(--color-accent);
+  white-space: nowrap;
+  animation: typing 2s steps(40, end), blink 1s infinite;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+/* Glitch Effect */
+.glitch-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-effect:hover {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glitch-effect:hover::before {
+  animation: glitch-skew 0.3s ease-in-out infinite;
+  color: #ff0080;
+  transform: translate(-2px, -2px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.glitch-effect:hover::after {
+  animation: glitch-skew 0.3s ease-in-out infinite reverse;
+  color: #00ffff;
+  transform: translate(2px, 2px);
+  opacity: 0.8;
+  z-index: -2;
+}
+
+/* Scanlines Effect */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    transparent 50%,
+    rgba(0, 255, 136, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  animation: scanlines 0.1s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Particle Background */
+#particles-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 4px; /* Head of the star */
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  opacity: 0; /* Start invisible */
+  box-shadow: 0 0 10px 2px var(--color-accent); /* Glow effect */
+  animation: shoot-star var(--star-duration) linear infinite;
+  transform: rotate(45deg); /* Angle the star */
+}
+
+/* Keyframe for shooting star animation */
+@keyframes shoot-star {
+  0% {
+    transform: translate(calc(var(--star-start-x) * 1vw), calc(var(--star-start-y) * 1vh)) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1; /* Fade in */
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(var(--star-end-x) * 1vw), calc(var(--star-end-y) * 1vh)) rotate(45deg);
+    opacity: 0; /* Fade out */
+  }
+}
+
+/* Connection Lines */
+.connection-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.3),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.connection-line.active {
+  opacity: 1;
+}
+
+/* Fade In Animations */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+/* Staggered Animations */
+.fade-in-up.delay-1 { animation-delay: 0.1s; }
+.fade-in-up.delay-2 { animation-delay: 0.2s; }
+.fade-in-up.delay-3 { animation-delay: 0.3s; }
+.fade-in-up.delay-4 { animation-delay: 0.4s; }
+.fade-in-up.delay-5 { animation-delay: 0.5s; }
+
+/* Pulse Effect */
+.pulse-effect {
+  animation: pulse 2s infinite;
+}
+
+/* Float Effect */
+.float-effect {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hover Animations */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+/* Text Reveal Animation */
+.text-reveal {
+  overflow: hidden;
+  position: relative;
+}
+
+.text-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  transform: translateX(-100%);
+  animation: reveal 1s ease-in-out;
+}
+
+@keyframes reveal {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-glass-border);
+  border-top: 3px solid var(--color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Matrix Effect */
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.matrix-char {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-accent);
+  opacity: 0.7;
+  animation: matrix-rain 3s linear infinite;
+}
+
+/* Terminal Cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--color-accent);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* Neon Glow Effect */
+.neon-glow {
+  text-shadow: 
+    0 0 5px var(--color-accent),
+    0 0 10px var(--color-accent),
+    0 0 15px var(--color-accent),
+    0 0 20px var(--color-accent);
+}
+
+/* Circuit Board Pattern */
+.circuit-pattern {
+  background-image: 
+    linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: circuit-move 20s linear infinite;
+}
+
+@keyframes circuit-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+/* Hologram Effect */
+.hologram {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 255, 136, 0.1) 50%,
+    transparent 70%
+  );
+  background-size: 20px 20px;
+  animation: hologram-scan 2s linear infinite;
+}
+
+@keyframes hologram-scan {
+  0% {
+    background-position: -20px -20px;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+/* Data Stream Effect */
+.data-stream {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-stream::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.2),
+    transparent
+  );
+  animation: data-flow 2s ease-in-out infinite;
+}
+
+@keyframes data-flow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+  .glitch-effect:hover {
+    animation: none;
+  }
+  
+  .glitch-effect:hover::before,
+  .glitch-effect:hover::after {
+    display: none;
+  }
+  
+  .particle {
+    display: none;
+  }
+  
+  .scanlines {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .scanlines,
+  .particle,
+  .matrix-char {
+    display: none;
+  }
+}
+
+/* Solar System Animation */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
+}
+
+.solar-system {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; /* Adjust as needed */
+  height: 600px; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1; /* Behind other content */
+}
+
+.star {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #FFD700; /* Gold color for the star */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', cursive; /* 8-bit font */
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  z-index: 1;
+}
+
+.planet {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #00BFFF; /* Default planet color */
+  border-radius: 50%;
+  animation: orbit linear infinite;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  font-size: 8px;
+  text-align: center;
+}
+
+.planet.ai {
+  background-color: #FF6347; /* Tomato */
+  --orbit-radius: 150px;
+  animation-duration: 15s;
+}
+
+.planet.ml {
+  background-color: #9ACD32; /* YellowGreen */
+  --orbit-radius: 200px;
+  animation-duration: 20s;
+}
+
+.planet.data-analysis {
+  background-color: #DA70D6; /* Orchid */
+  --orbit-radius: 250px;
+  animation-duration: 25s;
+}
+
+.planet.web-dev {
+  background-color: #4682B4; /* SteelBlue */
+  --orbit-radius: 300px;
+  animation-duration: 30s;
+}
+
+/* Performance Optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
