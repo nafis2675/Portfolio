@@ -31,8 +31,6 @@ class PortfolioApp {
   onDOMReady() {
     this.updateActiveNavLink();
     this.startTypingAnimation();
-    this.updateActiveNavLink();
-    this.startTypingAnimation();
   }
 
   setupEventListeners() {

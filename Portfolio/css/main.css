@@ -239,7 +239,6 @@ a:hover {
   padding: var(--spacing-3xl) 0;
   flex-grow: 1; /* Allow hero section to grow */
   background-color: rgba(0, 0, 0, 0.2); /* Transparent faint background */
-  margin-left: 25.4mm; /* Move 1 inch to the right */
 }
 
 .hero-content {
@@ -248,7 +247,6 @@ a:hover {
   gap: var(--spacing-3xl);
   align-items: center;
   width: 100%; /* Ensure it takes full width of container */
-  margin-left: 25.4mm; /* Move 1 inch to the right */
 }
 
 .hero-image-container {
@@ -260,6 +258,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 1cm;
 }
 
 .hero-image-frame {
@@ -438,6 +437,7 @@ a:hover {
 /* Hero Text */
 .hero-text {
   text-align: left;
+  margin-left: 1cm;
 }
 
 .hero-name {
@@ -718,6 +718,14 @@ a:hover {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
     text-align: center;
+  }
+
+  .hero-image-container {
+    margin-right: 0;
+  }
+
+  .hero-text {
+    margin-left: 0;
   }
   
   .hero-actions {
