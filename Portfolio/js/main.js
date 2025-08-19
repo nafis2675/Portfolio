@@ -31,6 +31,7 @@ class PortfolioApp {
   onDOMReady() {
     this.updateActiveNavLink();
     this.startTypingAnimation();
+    this.initializeScrollIndicator();
   }
 
   setupEventListeners() {
@@ -335,16 +336,80 @@ class PortfolioApp {
       // Reduce particles on mobile
       this.createParticleSystem();
     }
+    
+    // Recalculate scroll indicator visibility on resize
+    this.initializeScrollIndicator();
+  }
+
+  initializeScrollIndicator() {
+    const scrollIndicator = document.querySelector('.scroll-down-indicator');
+    if (scrollIndicator) {
+      // Initial check on page load
+      setTimeout(() => {
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollableHeight = documentHeight - windowHeight;
+        
+        // Hide if there's not significant content to scroll (consistent with handleScroll)
+        if (scrollableHeight < 300) {
+          scrollIndicator.classList.add('hidden');
+        } else {
+          scrollIndicator.classList.remove('hidden');
+        }
+      }, 100); // Small delay to ensure content is loaded
+    }
   }
 
   handleScroll() {
     const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
+    const scrollIndicator = document.querySelector('.scroll-down-indicator');
     
-    if (window.scrollY > 100) {
-      navbar.style.background = 'rgba(26, 26, 26, 0.95)';
-    } else {
-      navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+    // Update navbar background
+    if (navbar) {
+      if (window.scrollY > 100) {
+        navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+      } else {
+        navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+      }
+    }
+    
+    // Show/hide scroll indicator with improved logic
+    if (scrollIndicator) {
+      const documentHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+      const scrollableHeight = documentHeight - windowHeight;
+      
+      // Only show indicator if there's significant content to scroll
+      if (scrollableHeight < 300) {
+        scrollIndicator.classList.add('hidden');
+        return;
+      }
+      
+      // Calculate scroll percentage
+      const scrollPercentage = (scrollTop / scrollableHeight) * 100;
+      
+      // Dynamic threshold based on content length
+      let hideThreshold;
+      if (scrollableHeight > 2000) {
+        // Long content - hide after scrolling 15%
+        hideThreshold = 15;
+      } else if (scrollableHeight > 1000) {
+        // Medium content - hide after scrolling 25%
+        hideThreshold = 25;
+      } else {
+        // Shorter content - hide after scrolling 40%
+        hideThreshold = 40;
+      }
+      
+      // Hide indicator when scrolled past threshold or near bottom (within 150px)
+      const nearBottom = (scrollableHeight - scrollTop) < 150;
+      
+      if (scrollPercentage > hideThreshold || nearBottom) {
+        scrollIndicator.classList.add('hidden');
+      } else {
+        scrollIndicator.classList.remove('hidden');
+      }
     }
   }
 
